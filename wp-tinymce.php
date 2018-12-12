@@ -14,6 +14,7 @@ function owt_attach_custom_tinymce_buttons($buttons){
 
   $buttons[] = "editor_console";
   $buttons[] = "editor_alert"; 
+  $buttons[] = "editor_popup"; 
   return $buttons;
 }
 
