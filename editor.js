@@ -2,6 +2,44 @@ jQuery(function(){
 
   tinymce.PluginManager.add("mce_editor_js",function(editor){
 
+       // adding dropdown to tinyMCE toolbar
+       editor.addButton("editor_dropdown",{
+
+           text: "OWT Dropdown",
+           tooltip: "This is sample dropdown",
+           type:"menubutton",
+           menu:[
+              {
+                 text: "Plugin Development",
+                 value: "OWT Plugin Development",
+                 onclick: function(){
+                    editor.insertContent(this.value());
+                 }
+              },
+              {
+                 text: "Theme Development",
+                 value: "OWT Theme Development",
+                 onclick: function(){
+                    editor.insertContent(this.value());
+                 }
+              },
+              {
+                 text: "Shortcodes Development",
+                 value: "OWT Shortcodes Development",
+                 onclick: function(){
+                    editor.insertContent(this.value());
+                 }
+              },
+              {
+                 text: "OWT VueJS Development",
+                 onclick: function(){
+                    editor.insertContent("OWT VueJS Development");
+                 }
+              }
+           ]
+	});
+
+
        // adding custom buttons to tinymce editor
 
        editor.addButton("editor_console",{
