@@ -76,9 +76,42 @@ jQuery(function(){
          editor.windowManager.open({
              title: "Simple Modal",
              height:400,
-             width: 500
-         });
-
+             width: 500,
+             body:[
+		{
+		  type:"textbox",
+ 		  name:"owt_txtbox",
+           	  label: "Enter Name",
+                  autofocus: true	
+		},
+  		{
+		  type:"textbox",
+ 		  name:"owt_email",
+           	  label: "Enter Email"	
+		},
+		{
+		  type:"checkbox",
+ 		  name:"owt_chkbox",
+		  checked: true,
+           	  label: "Please check to like this"	
+		},
+		{
+		  type:"listbox",
+ 		  name:"owt_listbox",
+           	  label: "Please select playlist",
+                  values:[
+                     { text: "OWT Metabox Tutorial", value: "owt-metabox" },
+                     { text: "OWT Shortcodes Tutorial", value: "owt-shortcode" },
+                     { text: "OWT Plugin Tutorial", value: "owt-plugin" },
+                     { text: "OWT CakePHP Tutorial", value: "owt-cakephp" },
+                  ]	
+		},	
+	     ],
+             onsubmit: function(e){
+                //console.log(e.data); // to collect all values from modal window
+                editor.insertContent("Name: "+ e.data.owt_txtbox +", Email: "+ e.data.owt_email +", Playlist selected:" + e.data.owt_listbox + ", Liked: " + e.data.owt_chkbox);
+	     }
+        });
      });
 
   });
